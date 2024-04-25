@@ -1,0 +1,10 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
+export default defineNuxtConfig({
+  experimental: {
+    asyncContext: true,
+    headNext: true,
+    typedPages: true,
+    viewTransition: true,
+  },
+  css: ["@picocss/pico"],
+});
