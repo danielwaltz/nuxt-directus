@@ -7,5 +7,5 @@ export default defineNuxtConfig({
     typedPages: true,
     viewTransition: true,
   },
-  css: ['@picocss/pico'],
+  css: ['@picocss/pico/css/pico.violet.min.css'],
 });
