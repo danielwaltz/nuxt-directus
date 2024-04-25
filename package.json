@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "nuxt-directus",
   "type": "module",
   "private": true,
   "packageManager": "pnpm@9.0.6",
@@ -10,7 +10,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint . --max-warnings 0",
-    "type-check": "nuxt typecheck"
+    "type-check": "nuxt typecheck",
+    "directus:start": "docker run -p 8055:8055 -e KEY=nuxt-directus -e SECRET=nuxt-directus directus/directus"
   },
   "devDependencies": {
     "@nuxt/eslint": "^0.3.10",
