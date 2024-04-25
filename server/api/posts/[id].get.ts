@@ -1,4 +1,3 @@
-// @ts-nocheck
 export default defineEventHandler(async (event) => {
   const params = getRouterParams(event);
 

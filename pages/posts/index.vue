@@ -1,7 +1,7 @@
 <script setup lang="ts">
-useHead({ title: "Posts" });
+useHead({ title: 'Posts' });
 
-const { data: posts } = await useFetch("/api/posts");
+const { data: posts } = await useFetch('/api/posts');
 </script>
 
 <template>
@@ -9,7 +9,10 @@ const { data: posts } = await useFetch("/api/posts");
     <h2>Posts</h2>
 
     <template v-if="posts.length">
-      <article v-for="post in posts" :key="post.id">
+      <article
+        v-for="post in posts"
+        :key="post.id"
+      >
         <h3 v-if="post.title">
           <NuxtLink :href="`/posts/${post.id}`">
             {{ post.title }}
@@ -18,7 +21,9 @@ const { data: posts } = await useFetch("/api/posts");
 
         <DirectusBlocks :blocks="post.content" />
 
-        <NuxtLink :href="`/posts/${post.id}`">Read more &rarr;</NuxtLink>
+        <NuxtLink :href="`/posts/${post.id}`">
+          Read more &rarr;
+        </NuxtLink>
       </article>
     </template>
 
