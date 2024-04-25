@@ -15,15 +15,11 @@ if (!post.value) {
 <template>
   <div>
     <article>
-      <h1 v-if="post.title">
-        {{ post.title }}
-      </h1>
+      <h1 v-if="post.title">{{ post.title }}</h1>
 
       <DirectusBlocks :blocks="post.content" />
     </article>
 
-    <NuxtLink href="/posts">
-      &larr; Back to posts
-    </NuxtLink>
+    <NuxtLink href="/posts">&larr; Back to posts</NuxtLink>
   </div>
 </template>

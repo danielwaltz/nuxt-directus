@@ -3,5 +3,5 @@ export default defineEventHandler(async () => {
 
   const posts = result?.data ?? [];
 
-  return posts.filter(post => post.status === 'published');
+  return posts.filter((post) => post.status === 'published');
 });

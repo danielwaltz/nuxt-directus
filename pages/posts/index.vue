@@ -9,21 +9,14 @@ const { data: posts } = await useFetch('/api/posts');
     <h2>Posts</h2>
 
     <template v-if="posts.length">
-      <article
-        v-for="post in posts"
-        :key="post.id"
-      >
+      <article v-for="post in posts" :key="post.id">
         <h3 v-if="post.title">
-          <NuxtLink :href="`/posts/${post.id}`">
-            {{ post.title }}
-          </NuxtLink>
+          <NuxtLink :href="`/posts/${post.id}`">{{ post.title }}</NuxtLink>
         </h3>
 
         <DirectusBlocks :blocks="post.content" />
 
-        <NuxtLink :href="`/posts/${post.id}`">
-          Read more &rarr;
-        </NuxtLink>
+        <NuxtLink :href="`/posts/${post.id}`">Read more &rarr;</NuxtLink>
       </article>
     </template>
 

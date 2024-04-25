@@ -8,11 +8,4 @@ export default defineNuxtConfig({
     viewTransition: true,
   },
   css: ['@picocss/pico'],
-  eslint: {
-    config: {
-      stylistic: {
-        semi: true,
-      },
-    },
-  },
 });

@@ -9,9 +9,7 @@ useHead({ title: 'Home' });
     <p>Welcome to the Nuxt Directus example.</p>
 
     <p>
-      View the <NuxtLink href="/posts">
-        posts page
-      </NuxtLink> to see some
+      View the <NuxtLink href="/posts">posts page</NuxtLink> to see some
       content.
     </p>
   </div>

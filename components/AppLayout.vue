@@ -7,9 +7,7 @@ useHead({ titleTemplate: '%s - Nuxt Directus' });
     <header>
       <hgroup>
         <h1>
-          <NuxtLink href="/">
-            Nuxt Directus
-          </NuxtLink>
+          <NuxtLink href="/"> Nuxt Directus </NuxtLink>
         </h1>
         <p>Example integrating Nuxt + Directus</p>
       </hgroup>
@@ -17,20 +15,16 @@ useHead({ titleTemplate: '%s - Nuxt Directus' });
       <nav>
         <ul>
           <li>
-            <NuxtLink href="/">
-              Home
-            </NuxtLink>
+            <NuxtLink href="/"> Home </NuxtLink>
           </li>
           <li>
-            <NuxtLink href="/posts">
-              Posts
-            </NuxtLink>
+            <NuxtLink href="/posts"> Posts </NuxtLink>
           </li>
         </ul>
       </nav>
     </header>
 
-    <hr>
+    <hr />
 
     <main>
       <slot />

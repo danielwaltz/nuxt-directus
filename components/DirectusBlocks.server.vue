@@ -17,8 +17,8 @@ const instance = edjsHTML({
           `<tr>${row
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             .map((cell: any) => {
-              const cellTag
-                = block.data.withHeadings && rowIndex === 0 ? 'th' : 'td';
+              const cellTag =
+                block.data.withHeadings && rowIndex === 0 ? 'th' : 'td';
               return `<${cellTag}>${cell}</${cellTag}>`;
             })
             .join('')}</tr>`,
