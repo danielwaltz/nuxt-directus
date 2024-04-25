@@ -8,7 +8,7 @@ const { data: posts } = await useFetch('/api/posts');
   <section>
     <h2>Posts</h2>
 
-    <template v-if="posts.length">
+    <template v-if="posts?.length">
       <article v-for="post in posts" :key="post.id">
         <h3 v-if="post.title">
           <NuxtLink :href="`/posts/${post.id}`">{{ post.title }}</NuxtLink>
