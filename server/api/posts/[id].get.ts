@@ -1,20 +1,28 @@
 import * as v from 'valibot';
 
+const ParamsSchema = v.object({
+  id: v.string(),
+});
+
 const ResponseSchema = v.object({
-  data: v.object({
-    id: v.number(),
-    title: v.string(),
-    status: v.string(),
-    content: v.unknown(),
-  }),
+  data: PostSchema,
 });
 
 export default defineEventHandler(async (event) => {
-  const params = getRouterParams(event);
+  const params = await getValidatedRouterParams(event, validate(ParamsSchema));
 
   const result = await $fetch(`http://localhost:8055/items/posts/${params.id}`);
 
-  const post = v.parse(ResponseSchema, result).data;
+  const post = validate(ResponseSchema)(result).data;
+
+  const isPublished = post.status === 'published';
+
+  if (!isPublished) {
+    throw createError({
+      statusCode: 404,
+      message: 'Post not found',
+    });
+  }
 
   return post;
 });
