@@ -4,9 +4,9 @@ This is a minimal starter template for Nuxt 3 with Directus. It includes a basic
 
 ## Local Development
 
-Start the Directus server with `pnpm run directus:start` (requires docker) and access the admin panel at <http://localhost:8055/admin>. The default login credentials are generated and in the console output.
+Start the Directus server with `pnpm directus:start` (requires docker) and access the admin panel at <http://localhost:8055/admin>. The default login credentials are generated and in the console output.
 
-Then start the Nuxt 3 development server `pnpm dev`. Create a data model in Directus matching the schemas defined in Nuxt server routes.
+Then start the Nuxt 3 development server `pnpm dev` and access the front-end at <http://localhost:3000>. Create a data model for "posts" in Directus matching the schema defined in Nuxt server routes.
 
 # Nuxt 3 Minimal Starter
 
