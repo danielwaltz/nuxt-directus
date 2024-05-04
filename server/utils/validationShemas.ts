@@ -2,8 +2,8 @@ import * as v from 'valibot';
 
 export const validate =
   <TSchema extends v.BaseSchema>(schema: TSchema) =>
-  (data: unknown) =>
-    v.parse(schema, data);
+  (input: unknown) =>
+    v.parse(schema, input);
 
 export const PostSchema = v.object({
   id: v.number(),
