@@ -1,5 +1,3 @@
-import * as v from 'valibot';
-
 const ResponseSchema = v.object({
   data: v.array(PostSchema),
 });

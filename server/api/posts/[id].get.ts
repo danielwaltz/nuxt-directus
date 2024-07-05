@@ -1,5 +1,3 @@
-import * as v from 'valibot';
-
 const ParamsSchema = v.object({
   id: v.string(),
 });
