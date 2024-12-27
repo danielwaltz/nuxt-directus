@@ -1,11 +1,11 @@
 <script setup lang="ts">
-const route = useRoute('posts-id');
+const route = useRoute("posts-id");
 
 const id = toRef(() => route.params.id);
 
 const { data: post, status, error } = useLazyFetch(`/api/posts/${id.value}`);
 
-const title = toRef(() => post.value?.title ?? '');
+const title = toRef(() => post.value?.title ?? "");
 const content = toRef(() => post.value?.content ?? null);
 
 useHead({ title });

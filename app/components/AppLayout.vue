@@ -1,5 +1,5 @@
 <script setup lang="ts">
-useHead({ titleTemplate: '%s - Nuxt Directus' });
+useHead({ titleTemplate: "%s - Nuxt Directus" });
 </script>
 
 <template>

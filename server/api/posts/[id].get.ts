@@ -13,12 +13,12 @@ export default defineEventHandler(async (event) => {
 
   const post = validate(ResponseSchema)(result).data;
 
-  const isPublished = post.status === 'published';
+  const isPublished = post.status === "published";
 
   if (!isPublished) {
     throw createError({
       statusCode: 404,
-      message: 'Post not found',
+      message: "Post not found",
     });
   }
 

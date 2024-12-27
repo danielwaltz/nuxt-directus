@@ -3,9 +3,9 @@ const ResponseSchema = v.object({
 });
 
 export default defineEventHandler(async () => {
-  const result = await $fetch('http://localhost:8055/items/posts');
+  const result = await $fetch("http://localhost:8055/items/posts");
 
   const posts = validate(ResponseSchema)(result).data;
 
-  return posts.filter((post) => post.status === 'published');
+  return posts.filter((post) => post.status === "published");
 });

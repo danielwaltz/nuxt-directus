@@ -1,7 +1,7 @@
 <script setup lang="ts">
-useHead({ title: 'Posts' });
+useHead({ title: "Posts" });
 
-const { data: posts, status, error } = useLazyFetch('/api/posts');
+const { data: posts, status, error } = useLazyFetch("/api/posts");
 </script>
 
 <template>

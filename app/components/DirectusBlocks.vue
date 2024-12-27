@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import edjsHTML from 'editorjs-html';
+import edjsHTML from "editorjs-html";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const props = defineProps<{ blocks: any }>();
@@ -18,17 +18,17 @@ const instance = edjsHTML({
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             .map((cell: any) => {
               const cellTag =
-                block.data.withHeadings && rowIndex === 0 ? 'th' : 'td';
+                block.data.withHeadings && rowIndex === 0 ? "th" : "td";
               return `<${cellTag}>${cell}</${cellTag}>`;
             })
-            .join('')}</tr>`,
+            .join("")}</tr>`,
       )
-      .join('');
+      .join("");
     return `<table>${rows}</table>`;
   },
 });
 
-const html = instance.parse(props.blocks).join('');
+const html = instance.parse(props.blocks).join("");
 </script>
 
 <template>
