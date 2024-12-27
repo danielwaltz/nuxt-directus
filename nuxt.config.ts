@@ -1,7 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: "2024-07-04",
   modules: ["@nuxt/eslint", "@unocss/nuxt"],
+  css: ["@picocss/pico/css/pico.violet.min.css"],
+  routeRules: {
+    "/assets/**": { proxy: "http://localhost:8055/assets/**" },
+  },
   future: {
     compatibilityVersion: 4,
   },
@@ -10,8 +13,12 @@ export default defineNuxtConfig({
     typedPages: true,
     viewTransition: true,
   },
-  css: ["@picocss/pico/css/pico.violet.min.css"],
-  routeRules: {
-    "/assets/**": { proxy: "http://localhost:8055/assets/**" },
+  compatibilityDate: "2024-07-04",
+  eslint: {
+    config: {
+      nuxt: {
+        sortConfigKeys: true,
+      },
+    },
   },
 });
