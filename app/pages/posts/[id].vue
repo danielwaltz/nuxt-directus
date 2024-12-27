@@ -3,11 +3,7 @@ const route = useRoute('posts-id');
 
 const id = toRef(() => route.params.id);
 
-const {
-  data: post,
-  pending,
-  error,
-} = await useFetch(`/api/posts/${id.value}`, { lazy: true });
+const { data: post, status, error } = useLazyFetch(`/api/posts/${id.value}`);
 
 const title = toRef(() => post.value?.title ?? '');
 const content = toRef(() => post.value?.content ?? null);
@@ -29,7 +25,7 @@ useHead({ title });
       </NuxtLink>
     </template>
 
-    <div v-else-if="pending" aria-busy="true">Loading post...</div>
+    <div v-else-if="status === 'pending'" aria-busy="true">Loading post...</div>
 
     <template v-else>
       <p>Post not found</p>

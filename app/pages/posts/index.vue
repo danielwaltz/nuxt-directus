@@ -1,11 +1,7 @@
 <script setup lang="ts">
 useHead({ title: 'Posts' });
 
-const {
-  data: posts,
-  pending,
-  error,
-} = await useFetch('/api/posts', { lazy: true });
+const { data: posts, status, error } = useLazyFetch('/api/posts');
 </script>
 
 <template>
@@ -30,7 +26,9 @@ const {
       </article>
     </div>
 
-    <div v-else-if="pending" aria-busy="true">Loading posts...</div>
+    <div v-else-if="status === 'pending'" aria-busy="true">
+      Loading posts...
+    </div>
 
     <template v-else>
       <p>No posts found</p>
