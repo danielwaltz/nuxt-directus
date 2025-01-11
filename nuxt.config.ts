@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     typedPages: true,
     viewTransition: true,
   },
-  compatibilityDate: "2024-07-04",
+  compatibilityDate: "2025-01-01",
   eslint: {
     config: {
       nuxt: {
